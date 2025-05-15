@@ -1,17 +1,17 @@
 package org.lessons.java.spring_la_mia_pizzeria_crud.Controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/pizzas")
-public class pizzaController {
+@RequestMapping("/")
+public class homeController {
 
     @GetMapping
-    public String index(Model model) {
-        return "pizzas/index";
+    public String home() {
+        return "home";
     }
 
 }

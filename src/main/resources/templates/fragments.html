@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <th:block th:fragment="custom-navbar">
+        <div class="container">
+            <nav class="navbar">
+                <div>
+                   <span>test</span>
+                </div>
+            </nav>
+        </div>
+    </th:block>
+
+    <th:block th:fragment="styles">
+        <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.5/css/bootstrap.min.css}">
+        <link th:rel="stylesheet" th:href="@{/css/style.css}">
+    </th:block>
+</body>
+
+</html>

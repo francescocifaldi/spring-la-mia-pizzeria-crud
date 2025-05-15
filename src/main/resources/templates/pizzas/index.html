@@ -12,19 +12,25 @@
     <th:block th:replace="~{fragments :: custom-navbar}"></th:block>
     <div class="container">
         <h1>L'elenco delle nostre pizze</h1>
-
-                <th:block th:each="pizza : ${pizzas}" th:object="${pizza}">
-
-                    <div class="card w-25">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
+        <div class="row">
+            <th:block th:each="pizza : ${pizzas}" th:object="${pizza}">
+            <div class="col-3 p-2">
+                <div class="card p-2 h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                     <div class="card-body p-0 d-flex flex-column justify-content-between">
+                        <div>
                             <h5 class="card-title" th:text="*{name}"></h5>
                             <p class="card-text">[[*{description}]]</p>
-                            <p class="card-text">[[*{price}]]</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <div>
+                            <p class="card-text">€ [[*{price}]]</p>
+                            <a href="#" class="btn btn-primary mb-0">Go somewhere</a>
                         </div>
                     </div>
-                </th:block>
-
+                </div>
+            </div>
+            </th:block>
+        </div>
+    </div>
 </body>
 </html>

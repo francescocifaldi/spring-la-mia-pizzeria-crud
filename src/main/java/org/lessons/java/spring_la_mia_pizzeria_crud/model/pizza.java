@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "pizzas")
-public class pizza {
+public class Pizza {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Integer id;
@@ -21,7 +21,7 @@ public class pizza {
     private Double price;
 
     // Constructor
-    public pizza() {
+    public Pizza() {
     }
 
     // Getters and Setters

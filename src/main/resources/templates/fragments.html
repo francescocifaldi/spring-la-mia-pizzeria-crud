@@ -10,10 +10,19 @@
     <th:block th:fragment="custom-navbar">
         <div class="container d-flex justify-content-between align-items-center py-2">
             <img th:src="@{/imgs/logo.png}" alt="logo" class="logo" height="50">
-            <div class="navbar d-flex gap-2">
-                   <a class="btn btn-secondary" th:href="@{/}">Home</a>
-                   <a class="btn btn-secondary" th:href="@{/pizzas}">Elenco pizze</a>
-            </div>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" th:href="@{/}">Home</a>
+                        <a class="nav-link" th:href="@{/pizzas}">Elenco pizze</a>
+                    </div>
+                </div>
+            </nav>
         </div>
     </th:block>
 

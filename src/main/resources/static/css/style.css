@@ -12,3 +12,9 @@ ol, li {
     font-weight: bold;
     color: #007bff;
 }
+
+.fixed-img {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+}

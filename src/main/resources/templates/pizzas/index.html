@@ -18,7 +18,7 @@
 
                     <img 
                     th:src="@{${pizza.photo} != null ? '/imgs/' + ${pizza.photo} : '/imgs/placeholder.png'}"
-                    class="card-img-top fixed-img" alt="...">
+                    class="card-img-top fixed-img" alt="..."/>
 
                      <div class="card-body p-0 d-flex flex-column justify-content-between">
                         <div>
@@ -28,7 +28,7 @@
                         <div>
                             <p class="card-text">€ [[*{price}]]</p>
                             <div class="d-flex justify-content-between align-items-center">
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a th:href="@{/pizzas/{id}(id=${pizza.id})}" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Dettagli</a>
                             <i class="fa-solid fa-ellipsis-vertical btn btn-secondary"></i>
                         </div>
                         </div>

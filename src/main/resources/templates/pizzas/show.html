@@ -12,7 +12,9 @@
         <h1 class="text-center"> [[${pizza.name}]]</h1>
         <div class="row">
             <div class="col-6 d-flex justify-content-center">
-                <img th:src="@{/imgs/placeholder.png}" alt="">
+                                    <img 
+                    th:src="@{${pizza.photo} != null ? '/imgs/' + ${pizza.photo} : '/imgs/placeholder.png'}"
+                    class="card-img-top" alt="..."/>
             </div>
             <div class="col-6">
                 <p th:text="${pizza.description}"></p>

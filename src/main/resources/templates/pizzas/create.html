@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <th:block th:replace="~{fragments :: styles}"></th:block>
+    <title>Document</title>
+  </head>
+  <th:block th:replace="~{fragments :: custom-navbar}"></th:block>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Crea una nuova pizza</h1>
+      <form id="pizza-form" action="@{pizzas/create}" method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            required
+          />
+
+          <label for="description" class="form-label">Descrizione</label>
+          <input
+            class="form-control"
+            id="description"
+            name="description"
+            rows="3"
+            required
+          />
+          <label for="price" class="form-label">Prezzo</label>
+          <input
+            type="number"
+            class="form-control"
+            id="price"
+            name="price"
+            required
+          />
+        </div>
+        <div class="mb-3 d-flex justify-content-between">
+          <input type="submit" class="btn btn-primary" value="Crea" />
+          <input type="reset" class="btn btn-danger" value="Annulla" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

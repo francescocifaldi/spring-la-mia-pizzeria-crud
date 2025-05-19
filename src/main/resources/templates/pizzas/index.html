@@ -31,7 +31,7 @@
                                         <a th:href="@{/pizzas/{id}(id=${pizza.id})}" class="btn btn-primary">
                                             <i class="fa-solid fa-magnifying-glass"></i> Dettagli
                                         </a>
-                                        <i class="fa-solid fa-ellipsis-vertical btn btn-secondary"></i>
+                                        <i class="fa-solid fa-trash-can btn btn-danger"></i>
                                     </div>
                                 </div>
                             </div>
@@ -42,9 +42,7 @@
         </div>
 
         <div th:if="${pizzas.isEmpty()}">
-            <div class="alert alert-warning text-center mt-2">
-                Nessuna pizza trovata
-            </div>
+            <th:block th:replace="~{fragments :: empty-pizzas}"></th:block>
         </div>
     </div>
 </div>

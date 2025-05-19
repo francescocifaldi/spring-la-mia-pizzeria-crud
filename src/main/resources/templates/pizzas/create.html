@@ -10,8 +10,8 @@
   <body>
     <div class="container">
       <h1 class="text-center">Crea una nuova pizza</h1>
-      <form id="pizza-form" action="@{pizzas/create}" method="post">
-        <div class="mb-3">
+      <form id="pizza-form" th:action="@{pizzas/create}" method="post">
+        <div class="mb-3" th:object="${pizza}">
           <label for="name" class="form-label">Nome</label>
           <input
             type="text"
@@ -19,16 +19,18 @@
             id="name"
             name="name"
             required
+            th:field="*{name}"
           />
 
           <label for="description" class="form-label">Descrizione</label>
-          <input
+          <textarea
             class="form-control"
             id="description"
             name="description"
             rows="3"
             required
-          />
+            th:field="*{description}"
+          ></textarea>
           <label for="price" class="form-label">Prezzo</label>
           <input
             type="number"
@@ -36,6 +38,7 @@
             id="price"
             name="price"
             required
+            th:field="*{price}"
           />
         </div>
         <div class="mb-3 d-flex justify-content-between">

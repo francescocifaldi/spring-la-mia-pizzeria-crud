@@ -61,7 +61,7 @@ public class pizzaController {
             Model model) {
 
         if (bindingResult.hasErrors()) {
-            model.addAttribute("pizza", pizza);
+            // model.addAttribute("pizza", pizza);
             return "pizzas/create";
         }
 

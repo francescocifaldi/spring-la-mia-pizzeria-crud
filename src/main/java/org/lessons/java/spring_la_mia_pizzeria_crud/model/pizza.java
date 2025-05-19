@@ -1,5 +1,7 @@
 package org.lessons.java.spring_la_mia_pizzeria_crud.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -14,12 +16,11 @@ public class Pizza {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank(message = "Name cannot be empty")
+    @NotBlank(message = "Il nome è obbligatorio")
     private String name;
     private String description;
     private String photo;
-    @NotBlank(message = "Price cannot be empty")
-    @Min(value = 0, message = "Price must be greater than or equal to 0")
+    @Min(value = 0, message = "Il prezzo deve essere maggiore o uguale a 0")
     private Double price;
 
     // Constructor

@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
@@ -18,6 +19,7 @@ public class Pizza {
     private String description;
     private String photo;
     @NotBlank(message = "Price cannot be empty")
+    @Min(value = 0, message = "Price must be greater than or equal to 0")
     private Double price;
 
     // Constructor

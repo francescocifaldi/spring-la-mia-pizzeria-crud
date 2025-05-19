@@ -61,11 +61,32 @@ public class pizzaController {
             Model model) {
 
         if (bindingResult.hasErrors()) {
-            // model.addAttribute("pizza", pizza);
             return "pizzas/create";
         }
 
         repo.save(pizza);
         return "redirect:/pizzas";
     }
+
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable("id") Integer id, Model model) {
+        Pizza pizza = repo.findById(id).get();
+        model.addAttribute("pizza", pizza);
+        return "pizzas/edit";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String update(
+            @Valid @ModelAttribute("pizza") Pizza pizza,
+            BindingResult bindingResult,
+            Model model) {
+
+        if (bindingResult.hasErrors()) {
+            return "pizzas/edit";
+        }
+
+        repo.save(pizza);
+        return "redirect:/pizzas";
+    }
+
 }
